@@ -13,6 +13,8 @@ if (!user) {
   counts = JSON.parse(counts) || [];
 }
 
+let totalCount = Object.values(allCounts).reduce((acc, val) => acc + val, 0);
+
 const counterElement = document.querySelector('.counter');
 const userCountElement = document.querySelector('.user-count');
 const totalCountElement = document.querySelector('.total-count');
@@ -26,7 +28,9 @@ function incrementCounter() {
   allCounts[user] = counts.length;
   localStorage.setItem('allCounts', JSON.stringify(allCounts));
 
-  updateTotalCount();
+  totalCount += 1;
+  totalCountElement.textContent = totalCount;
+  localStorage.setItem('totalCount', totalCount.toString());
 }
 
 function resetCounter() {
@@ -36,15 +40,10 @@ function resetCounter() {
   localStorage.setItem('counts', JSON.stringify(counts));
 }
 
-function updateTotalCount() {
-  const totalCount = Object.values(allCounts).reduce((acc, val) => acc + val, 0);
-  totalCountElement.textContent = totalCount;
-}
-
 // Initialize the counter values on page load
 counterElement.textContent = counts.length;
 userCountElement.textContent = counts.length;
-updateTotalCount();
+totalCountElement.textContent = totalCount;
 
 function generateUserID() {
   return Math.random().toString(36).substr(2, 9);
