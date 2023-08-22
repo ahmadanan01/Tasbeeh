@@ -39,12 +39,20 @@ function resetCounter() {
 function updateTotalCount() {
   let totalCount = Object.values(allCounts).reduce((acc, val) => acc + val, 0);
   totalCountElement.textContent = totalCount;
+  localStorage.setItem('totalCount', totalCount);
 }
 
 // Initialize the counter values on page load
 counterElement.textContent = counts.length;
 userCountElement.textContent = counts.length;
-updateTotalCount();
+
+// Retrieve the total count from localStorage
+let totalCount = localStorage.getItem('totalCount');
+if (totalCount) {
+  totalCountElement.textContent = totalCount;
+} else {
+  updateTotalCount();
+}
 
 function generateUserID() {
   return Math.random().toString(36).substr(2, 9);
