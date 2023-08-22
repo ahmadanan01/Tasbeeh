@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  .container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 1500px;
+    height: 300px;
+    cursor: pointer;
+  }
+  
+  .container:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .container h2 {
+    color: #333;
+    margin: 0;
+    font-weight: bolder;
+    font-size: 50px;
+    
+  }
+  
+  .counter {
+    font-size: 48px;
+    margin: 20px 0;
+    color: #333;
+    
+  }
+  
+  .counters {
+    display: flex;
+    justify-content: space-around;
+    max-width: 600px;
+    margin: 40px auto;
+  }
+  
+  .counter-item {
+    width: 200px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .counter-item h3 {
+    color: #333;
+    margin: 0;
+  }
+  
+  .user-count,
+  .total-count {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #333;
+  }
+
+  .reset-btn{
+    margin-left:43%;
+    border-color: red;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    width: 200px;
+    height: 100px;
+    cursor: pointer;
+    display: none;
+    
+  }
